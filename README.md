@@ -46,6 +46,21 @@ npm run build
 npm start
 ```
 
+## Package as a desktop app
+
+```sh
+npm run dist
+```
+
+Produces `release/f.frame-<version>-arm64.dmg`. Open it and drag f.frame into
+Applications. The app is ad-hoc signed (no paid Apple Developer ID), which is
+enough to run locally on this Mac — macOS Gatekeeper may still show an
+"unidentified developer" prompt the first time you open it from
+Applications; right-click → Open once to clear it.
+
+`npm run package` builds an unpacked `.app` in `release/mac-arm64/` for a
+quick check without producing a `.dmg`.
+
 ## Status
 
 MVP. Not yet packaged/signed as a distributable `.app`; run from source.
