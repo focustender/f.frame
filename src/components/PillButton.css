@@ -1,0 +1,58 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--scale-100);
+  height: var(--button-height);
+  border: none;
+  border-radius: var(--button-radius);
+  background: var(--button-fill);
+  color: var(--button-text);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.pill--icon {
+  width: var(--scale-900);
+}
+
+.pill--label {
+  padding: var(--scale-400);
+}
+
+.pill--exit {
+  background: var(--exit-fill);
+  /* FLAG: Figma drop shadow (0 4 6, 3% black) has no effect token */
+  filter: drop-shadow(0 var(--scale-50) 6px rgb(0 0 0 / 0.03));
+}
+
+.pill:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pill:focus-visible {
+  outline: var(--scale-25) solid var(--accent);
+  outline-offset: var(--scale-25);
+}
+
+.pill__label {
+  font: 460 var(--fs-body-md) var(--font-text);
+  line-height: normal;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.pill__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pill__icon img {
+  display: block;
+}
+
+.pill__icon--exit {
+  transform: rotate(-45deg);
+}

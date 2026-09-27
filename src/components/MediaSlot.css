@@ -1,0 +1,101 @@
+.slot {
+  margin: var(--scale-0);
+  display: flex;
+  flex-direction: column;
+  gap: var(--scale-75);
+}
+
+.slot__frame {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+  border-radius: var(--slot-radius);
+  background: var(--slot-fill);
+  outline: var(--scale-25) solid transparent;
+  outline-offset: var(--scale-25);
+  transition: outline-color 120ms, opacity 120ms;
+}
+
+.slot--loaded .slot__frame {
+  cursor: grab;
+  touch-action: none;
+}
+.slot--loaded .slot__frame:active {
+  cursor: grabbing;
+}
+.slot--loaded:not(.slot--selected) .slot__frame {
+  opacity: 0.4;
+}
+.slot--selected.slot--loaded .slot__frame {
+  outline-color: var(--accent);
+}
+
+/* Figma: Vanilla Grotesque Display 570, 13px, lh 1.15, tracking -0.39px (= -0.03em) */
+.slot__label {
+  margin: var(--scale-0);
+  font: 570 var(--fs-body-md) / 1.15 var(--font-display);
+  letter-spacing: -0.03em;
+  color: var(--slot-label);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.slot__media {
+  position: absolute;
+  inset: var(--scale-0);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+.slot__progress {
+  position: absolute;
+  left: var(--scale-0);
+  right: var(--scale-0);
+  bottom: var(--scale-0);
+  height: var(--scale-50);
+  background: var(--accent);
+  transform-origin: left;
+}
+
+.slot__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--scale-75);
+  color: var(--app-text);
+}
+
+.slot__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--scale-75);
+  cursor: pointer;
+}
+
+.slot__toggle input {
+  margin: var(--scale-0);
+  accent-color: var(--accent);
+}
+
+.slot__status {
+  color: var(--app-text-muted);
+}
+
+.slot__status--link {
+  border: none;
+  padding: var(--scale-0);
+  background: none;
+  font: inherit;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.slot__status--error {
+  color: var(--danger);
+}

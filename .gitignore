@@ -1,0 +1,6 @@
+node_modules
+dist
+dist-electron
+.DS_Store
+# licensed fonts: copy VanillaGrotesqueDisplay-570 + Text-450/460 from ~/Library/Fonts
+src/assets/fonts/*.otf

@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: var(--scale-0);
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font: 450 var(--fs-body-md) var(--font-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  outline: var(--scale-25) dashed transparent;
+  outline-offset: calc(var(--scale-75) * -1);
+}
+
+.app--dragover {
+  outline-color: var(--accent);
+}
+
+/* Title bar. Window uses hiddenInset, so the left pad clears the traffic lights. */
+.bar {
+  position: sticky;
+  top: var(--scale-0);
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--scale-200);
+  padding: var(--scale-200) var(--layout-page-margin) var(--scale-200) calc(var(--scale-900) + var(--scale-600));
+  background: var(--app-bg);
+  -webkit-app-region: drag;
+}
+
+.bar__group {
+  display: flex;
+  align-items: center;
+  gap: var(--scale-200);
+  min-width: var(--scale-0);
+}
+
+.bar button,
+.bar select,
+.bar input,
+.bar label {
+  -webkit-app-region: no-drag;
+}
+
+.bar__title {
+  margin: var(--scale-0);
+  font: 570 var(--fs-body-lg) / 1.15 var(--font-display);
+  letter-spacing: -0.03em;
+}
+
+.bar__file,
+.bar__hint {
+  color: var(--app-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bar__error {
+  color: var(--danger);
+}
+
+.field {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--scale-75);
+  height: var(--button-height);
+  padding: var(--scale-0) var(--scale-200);
+  border: none;
+  border-radius: var(--button-radius);
+  background: var(--app-surface);
+  color: var(--app-text);
+  font: inherit;
+  white-space: nowrap;
+}
+
+.field > span:first-child {
+  color: var(--app-text-muted);
+}
+
+.field select {
+  border: none;
+  background: transparent;
+  color: var(--app-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.field input {
+  margin: var(--scale-0);
+  accent-color: var(--accent);
+}
+
+.field--folder {
+  cursor: pointer;
+}
+
+.field__value {
+  max-width: var(--scale-1000);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Ratio grid: Layout collection margins, gaps, and column count */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--layout-module-cols), minmax(var(--scale-0), 1fr));
+  align-items: start;
+  gap: var(--layout-module-gap);
+  padding: var(--scale-200) var(--layout-page-margin) var(--scale-700);
+}

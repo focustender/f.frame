@@ -1,0 +1,182 @@
+/*
+ * FocusTender design tokens, mirrored from Figma file FocusTenderFullSystem
+ * (O7Ue4umGEnMZPA3DzQTjFy), collections "FocusTender" and "Layout".
+ * Component CSS must only reference these vars. If a value has no token, flag it
+ * here instead of inlining it.
+ */
+
+@font-face {
+  font-family: "Vanilla Grotesque Text";
+  src: url("../assets/fonts/VanillaGrotesqueText-450.otf") format("opentype");
+  font-weight: 450;
+}
+@font-face {
+  font-family: "Vanilla Grotesque Text";
+  src: url("../assets/fonts/VanillaGrotesqueText-460.otf") format("opentype");
+  font-weight: 460;
+}
+@font-face {
+  font-family: "Vanilla Grotesque Display";
+  src: url("../assets/fonts/VanillaGrotesqueDisplay-570.otf") format("opentype");
+  font-weight: 570;
+}
+
+:root {
+  /* Colors / Primitives */
+  --ft-icon: #330f4d;
+
+  --ft-cream-100: #fafaf9;
+  --ft-cream-200: #f5f4f2;
+  --ft-cream-300: #f1efec;
+  --ft-cream-400: #ece9e5;
+  --ft-cream-500: #e7e4df;
+  --ft-cream-600: #b9b6b2;
+  --ft-cream-700: #8b8986;
+  --ft-cream-800: #5c5b59;
+  --ft-cream-900: #2e2e2d;
+
+  --ft-black-100: #cfcecd;
+  --ft-black-200: #9f9d9b;
+  --ft-black-300: #6e6c6a;
+  --ft-black-400: #3e3b38;
+  --ft-black-500: #0e0a06;
+  --ft-black-600: #0b0805;
+  --ft-black-700: #080604;
+  --ft-black-800: #060402;
+  --ft-black-900: #030201;
+
+  --ft-blue-100: #eceff3;
+  --ft-blue-200: #d9dfe8;
+  --ft-blue-300: #c7d0dc;
+  --ft-blue-400: #b4c0d1;
+  --ft-blue-500: #a1b0c5;
+  --ft-blue-600: #818d9e;
+  --ft-blue-700: #616a76;
+  --ft-blue-800: #40464f;
+  --ft-blue-900: #202327;
+
+  --ft-yellow-100: #fdf5ec;
+  --ft-yellow-200: #fbebd9;
+  --ft-yellow-300: #fae1c5;
+  --ft-yellow-400: #f8d7b2;
+  --ft-yellow-500: #f6cd9f;
+  --ft-yellow-600: #c5a47f;
+  --ft-yellow-700: #947b5f;
+  --ft-yellow-800: #625240;
+  --ft-yellow-900: #312920;
+
+  --ft-orange-100: #fee2cf;
+  --ft-orange-200: #fec59f;
+  --ft-orange-300: #fda96e;
+  --ft-orange-400: #fd8c3e;
+  --ft-orange-500: #fc6f0e;
+  --ft-orange-600: #ca590b;
+  --ft-orange-700: #974308;
+  --ft-orange-800: #652c06;
+  --ft-orange-900: #321603;
+
+  --ft-brown-100: #dcd7d0;
+  --ft-brown-200: #b8afa2;
+  --ft-brown-300: #958773;
+  --ft-brown-400: #715f45;
+  --ft-brown-500: #4e3716;
+  --ft-brown-600: #3e2c12;
+  --ft-brown-700: #2f210d;
+  --ft-brown-800: #1f1609;
+  --ft-brown-900: #100b04;
+
+  --ft-green-100: #dbdbd4;
+  --ft-green-200: #b7b6a8;
+  --ft-green-300: #94927d;
+  --ft-green-400: #706d51;
+  --ft-green-500: #4c4926;
+  --ft-green-600: #3d3a1e;
+  --ft-green-700: #2e2c17;
+  --ft-green-800: #1e1d0f;
+  --ft-green-900: #0f0f08;
+
+  --ft-red-100: #eed0d0;
+  --ft-red-200: #dda0a1;
+  --ft-red-300: #cd7171;
+  --ft-red-400: #bc4142;
+  --ft-red-500: #ab1213;
+  --ft-red-600: #890e0f;
+  --ft-red-700: #670b0b;
+  --ft-red-800: #440708;
+  --ft-red-900: #220404;
+
+  /* Scale */
+  --scale-0: 0px;
+  --scale-25: 2px;
+  --scale-50: 4px;
+  --scale-75: 8px;
+  --scale-100: 12px;
+  --scale-200: 16px;
+  --scale-300: 20px;
+  --scale-400: 24px;
+  --scale-500: 28px;
+  --scale-600: 32px;
+  --scale-700: 40px;
+  --scale-725: 44px;
+  --scale-750: 48px;
+  --scale-800: 52px;
+  --scale-850: 56px;
+  --scale-900: 64px;
+  --scale-1000: 128px;
+  --scale-1400: 256px;
+
+  /* Fonts */
+  --font-text: "Vanilla Grotesque Text", system-ui, sans-serif;
+  --font-display: "Vanilla Grotesque Display", system-ui, sans-serif;
+  --font-blog: "Hard Times", Georgia, serif;
+
+  --fs-caption: 9px;
+  --fs-body-md: 13px;
+  --fs-body-lg: 18px;
+  --fs-heading-md: 26px;
+  --fs-heading-lg: 37px;
+  --fs-heading-xl: 52px;
+  --fs-display-md: 73px;
+  --fs-display-lg: 104px;
+  --fs-display-xl: 147px;
+
+  /* Layout collection, Mobile mode (default) */
+  --layout-page-margin: var(--scale-200);
+  --layout-module-gap: var(--scale-400);
+  --layout-module-cols: 1; /* module-w-25 = full width on Mobile */
+
+  /*
+   * App roles. Aliases only.
+   * FLAG: the Modules canvas background (#1f1f1f) and the Exit button fill
+   * (focustender/50 #f8f8f8, a remote-library variable) aren't in the local
+   * collection. Mapped to the nearest local tokens below.
+   */
+  --app-bg: var(--ft-blue-900);
+  --app-surface: var(--ft-blue-800);
+  --app-text: var(--ft-cream-100);
+  --app-text-muted: var(--ft-blue-600);
+  --slot-fill: var(--ft-black-100);
+  --slot-label: var(--ft-black-400);
+  --slot-radius: var(--scale-50);
+  --button-fill: var(--ft-cream-100);
+  --button-text: var(--ft-black-900);
+  --button-radius: var(--scale-400);
+  --button-height: var(--scale-750);
+  --exit-fill: var(--ft-cream-100);
+  --accent: var(--ft-orange-500);
+  --danger: var(--ft-red-400);
+}
+
+/* Layout collection, Tablet mode (module-w-25 = 160 in a 736 frame: 4 columns) */
+@media (min-width: 768px) {
+  :root {
+    --layout-module-gap: var(--scale-600);
+    --layout-module-cols: 4;
+  }
+}
+
+/* Text styles */
+.t-caption { font: 450 var(--fs-caption) var(--font-text); }
+.t-body { font: 450 var(--fs-body-md) var(--font-text); }
+.t-body-lg { font: 450 var(--fs-body-lg) var(--font-text); }
+.t-heading-md { font: 450 var(--fs-heading-md) var(--font-text); }

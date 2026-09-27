@@ -1,0 +1,33 @@
+{
+  "name": "f.frame",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Frame photos, videos and GIFs to FocusTender Module/Media aspect ratios and export web-optimized files",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"npm:dev:electron\"",
+    "dev:electron": "wait-on tcp:5183 && tsc -p electron/tsconfig.json && cross-env NODE_ENV=development electron dist-electron/main.js",
+    "build:renderer": "vite build",
+    "build:electron": "tsc -p electron/tsconfig.json",
+    "build": "npm run build:renderer && npm run build:electron",
+    "start": "electron dist-electron/main.js",
+    "test": "tsc -p electron/tsconfig.json && node --test dist-electron/media/*.test.js"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.35.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^10.0.5",
+    "cross-env": "^10.1.0",
+    "electron": "^44.4.5",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21",
+    "wait-on": "^9.1.0"
+  }
+}
